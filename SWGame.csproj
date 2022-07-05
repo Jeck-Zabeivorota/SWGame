@@ -55,6 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="GameObjects\EffectCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameObjects\MoveCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameObjects\Unit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,12 +75,37 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GameController\EnemyController.cs" />
+    <Compile Include="GameController\StepsQueue.cs" />
+    <Compile Include="GameMap\MoveAnimation.cs" />
+    <Compile Include="GameObjects\EffectCell.xaml.cs">
+      <DependentUpon>EffectCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameObjects\MoveCell.xaml.cs">
+      <DependentUpon>MoveCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameController\GController.cs" />
+    <Compile Include="GameObjects\Attack.cs" />
+    <Compile Include="GameObjects\RepublicUnits\CloneSolder.cs" />
+    <Compile Include="GameObjects\SeparatistsUnits\Droid.cs" />
+    <Compile Include="GameObjects\Unit.xaml.cs">
+      <DependentUpon>Unit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameMap\IMapObject.cs" />
+    <Compile Include="Instruments\Matrix.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="GameMap\GMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameMap\GMap.xaml.cs">
+      <DependentUpon>GMap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,5 +131,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

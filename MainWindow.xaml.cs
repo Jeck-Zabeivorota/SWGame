@@ -1,28 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+
+using SWGame.GameObjects.RepublicUnits;
+using SWGame.GameObjects.SeparatistsUnits;
+using SWGame.GameController;
 
 namespace SWGame
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+
+            UIMap.InitializeMap(11, 11);
+            GController.Map = UIMap;
+
+            GController.AddToMap(new CloneSolder { X = 3, Y = 6 }, new CloneSolder { X = 6, Y = 5 }, new Droid { X = 5, Y = 2 });
+
+            GController.StartGame();
         }
     }
 }
